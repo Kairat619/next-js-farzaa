@@ -5,13 +5,13 @@ const FarzaaContext = createContext();
 
 
 const FarzaaContextProvider = ({ children }) => {
-  // All door product fetched from api
+  // All door product fetched from api('/api/product` replaced with '/api/ornaments`)
   const [allProduct, setAllProduct] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([]); // State for filtered products
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch('/api/ornaments');
         if (response.ok) {
           const data = await response.json();
           setAllProduct(data); // Store fetched data in allProduct
